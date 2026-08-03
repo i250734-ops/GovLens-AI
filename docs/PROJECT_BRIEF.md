@@ -42,9 +42,11 @@ On top of that: a Kanban-style tracker (Watching / Pursuing / Submitted / No-bid
 
 10–170x cheaper than the enterprise incumbents, priced for exactly the segment they ignore.
 
-## How we're validating this (before finishing the automated product)
+## How we'll validate this (planned, not started yet)
 
-The founder is running a **manual concierge pilot** right now, in parallel with development: 5 real paying customers ($99/mo each), hand-matched. For these 5 people, the founder is literally doing SAM.gov searches by hand and asking Claude (in a normal chat, no app) to summarize matches, sent as a weekly email. If real people won't pay $99/mo for the *manual* version of this service, they won't pay for the automated one either — so this is proving demand before the software fully exists. Feedback from these 5 customers will shape the specs in this repo over time. **Expect specs to change** — that's intentional, not scope creep.
+Before finishing the automated product, the plan is to run a **manual concierge pilot**: find a handful of real small business owners who'd want this, and manually do the SAM.gov searching + Claude summarizing for them by hand (no app needed) in exchange for a small monthly fee. The logic: if real people won't pay for the *manual* version of this service, they won't pay for the automated one either — so this proves demand before the software fully exists, instead of after.
+
+**This has not started yet.** There are no pilot customers today, and no manual-outreach revenue yet. Finding these first customers — manual outreach via LinkedIn, PTAC referrals, govcon communities — is planned work both of us will do in parallel with the technical build, not something already running. Once real pilot customers exist, their feedback will shape the specs in this repo. **Expect specs to change once that happens** — that's intentional, not scope creep.
 
 ## Hard constraints (these shape technical decisions — don't design around them by accident)
 

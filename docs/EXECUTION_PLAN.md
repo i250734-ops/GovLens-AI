@@ -2,7 +2,21 @@
 
 This is the step-by-step plan from where the project stands today. Read `PROJECT_BRIEF.md` and `PROGRESS_REPORT.md` first.
 
-## Immediate next step (before anything else)
+## Two parallel tracks from here
+
+This project has two workstreams running side by side, not one sequential list. Don't treat the manual outreach track as blocking the technical one, or vice versa.
+
+**Track A — technical build (this repo).** Milestone 1 tasks 3–6, then Milestones 2–4. Detailed below.
+
+**Track B — manual concierge pilot outreach (not started yet).** Both founders, in parallel with the technical build:
+1. Find a handful of real small business owners who are SAM.gov-registered (or eligible) and would want this — via LinkedIn, PTAC referrals, or govcon communities (r/govcon, GovCon Chamber-type groups).
+2. For each one, manually search SAM.gov for matching opportunities and manually ask Claude (a normal chat, no app needed) to summarize the top matches in plain English. Send it as a weekly email or spreadsheet.
+3. Charge a small monthly fee for this — real money changing hands is the actual signal, not just people saying it's a good idea.
+4. If and when this gets real customers, their feedback shapes Milestone 2+ decisions (summary format, matching priorities, capability statement structure) before those get built — this is *why* Milestone 1 is scoped to infrastructure only.
+
+Track B has no dependency on Track A being finished — outreach can start any time. Track A's Milestone 2+ work, though, should wait on real signal from Track B rather than guessing.
+
+## Immediate next step on the technical track
 
 **Finish verifying Task 2 end-to-end.** This is small but it's the current blocker:
 1. Figure out what's running on port 3000 on the dev machine and resolve it (stop it if it's not needed, or run the dev server on another port and add that as a second redirect URL in the Supabase dashboard under Authentication → URL Configuration).
@@ -45,7 +59,7 @@ Each task follows the locked process: spec/design → plan lock → implement �
 - **Milestone 3 — Matching + dashboard + capability statements.** The actual product UI: a matching engine that joins user filters against summarized opportunities, the real dashboard (replacing today's placeholder), the Kanban tracker, and the AI-drafted capability statement generator (editable, PDF export).
 - **Milestone 4 — Billing + email digest.** Paddle integration (`packages/paddle-client`, currently a placeholder) — checkout, webhooks, plan-based feature gating — plus the Resend-powered daily/weekly digest. This is explicitly the milestone to review most carefully before shipping, since it's the one touching money and the founder's hard "no Stripe, no interest-based logic" constraints.
 
-Why this order: Milestone 1 is pure infrastructure that doesn't depend on customer feedback. Milestones 2–4 shape customer-facing behavior (what a summary looks like, what the matching logic prioritizes, what the capability statement template looks like) — and the founder is deliberately waiting for real feedback from the 5-customer manual concierge pilot before locking those decisions in, so building them early risks throwing away work once real feedback arrives.
+Why this order: Milestone 1 is pure infrastructure that doesn't depend on customer feedback. Milestones 2–4 shape customer-facing behavior (what a summary looks like, what the matching logic prioritizes, what the capability statement template looks like) — and the plan is to wait for real feedback from a manual concierge pilot (not started yet — see `PROJECT_BRIEF.md`) before locking those decisions in, so building them early risks throwing away work once real feedback arrives. Manual outreach to actually get that pilot running is planned parallel work, not a prerequisite that blocks Milestone 1 — it just needs to happen before Milestone 2+ decisions get locked in.
 
 ## A note on pace
 

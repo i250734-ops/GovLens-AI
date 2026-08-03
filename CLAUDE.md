@@ -14,7 +14,7 @@ GovLens AI matches US small businesses to federal contract opportunities from SA
 - **No interest-based ("riba") financial logic anywhere.** No "buy now pay later," no revolving credit, no compounding late fees. Failed/late payment = account pause, nothing more.
 - No haram-industry integrations or dependencies.
 - Budget-conscious infra: free tiers first (Supabase free tier, Vercel hobby tier), flag any new recurring cost before adding it.
-- Currently running a **manual concierge pilot** alongside this build (5 real customers, hand-matched, $99/mo) to validate demand before the automated product replaces that manual work. Feedback from that pilot will update the specs in this repo over time — expect specs to be revised, that's intentional.
+- **Plan (not started yet):** run a manual concierge pilot alongside this build — hand-match a handful of real customers, charge a small monthly fee, to validate demand before the automated product replaces that manual work. No pilot customers exist yet; manual outreach to find them is planned parallel work, not a completed or currently-running activity. Once real pilot feedback exists, it will update the specs in this repo — expect specs to be revised at that point, that's intentional.
 
 ## ⚠️ CURRENT BUILD SCOPE — read this before writing any code
 
