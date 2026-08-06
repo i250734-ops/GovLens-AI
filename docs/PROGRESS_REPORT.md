@@ -2,7 +2,7 @@
 
 Status as of the most recent work session. This is the technical companion to `PROJECT_BRIEF.md` — read that first if you haven't.
 
-## Where we are: Milestone 1, Tasks 1–2 of 6 fully done
+## Where we are: Milestone 1, Tasks 1, 2, and 6 of 6 done
 
 `specs/01-milestone-1-scope.md` defines Milestone 1 as six tasks. Status:
 
@@ -11,9 +11,9 @@ Status as of the most recent work session. This is the technical companion to `P
 | 1 | Repo scaffold (monorepo, workspace tooling) | **Done** |
 | 2 | Supabase connection + auth | **Done — verified end-to-end with a real sign-in** |
 | 3 | Database schema (`users`, `opportunities` tables) | Not started — **this is the next task** |
-| 4 | SAM.gov API client | Not started |
+| 4 | SAM.gov API client | Not started — likely the new partner's first task |
 | 5 | Nightly ingestion job | Not started |
-| 6 | Basic README | Not started |
+| 6 | Basic README | **Done** — see `README.md` at repo root |
 
 ## Task 1 — Repo scaffold (done)
 
