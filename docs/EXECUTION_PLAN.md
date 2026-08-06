@@ -35,10 +35,7 @@ Track B has no dependency on Track A being finished — outreach can start any t
 
 ## Immediate next step on the technical track
 
-**Finish verifying Task 2 end-to-end.** This is small but it's the current blocker:
-1. Figure out what's running on port 3000 on the dev machine and resolve it (stop it if it's not needed, or run the dev server on another port and add that as a second redirect URL in the Supabase dashboard under Authentication → URL Configuration).
-2. Start the dev server (`pnpm --filter @govlens/web dev`), go to `/login`, request a magic link with a real email address, click the link from your inbox, confirm you land on `/dashboard`, then confirm sign-out actually logs you out (visiting `/dashboard` again should redirect back to `/login`).
-3. Once that works, Task 2 is fully closed out — no code changes expected, just confirmation.
+**Task 2 is fully verified and closed out** — a real magic-link sign-in was completed end-to-end against the live Supabase project (see `PROGRESS_REPORT.md` for details, including a real env-var bug that live testing caught and fixed). **Task 3 (database schema) is next.**
 
 ## Milestone 1 — remaining tasks, in order
 
