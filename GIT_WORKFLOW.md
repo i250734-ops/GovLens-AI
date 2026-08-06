@@ -51,8 +51,25 @@ This trailer is what makes GitHub display Claude as a co-author on the commit al
 - Reference the milestone/spec it belongs to when relevant (e.g., "per specs/01-milestone-1-scope.md").
 - Always end with the `Co-authored-by` trailer from Rule 3.
 
-## Rule 5 — Branching (keep it simple for now)
-Work directly on `main` with small, frequent commits for this early solo-founder phase — the overhead of feature branches and PRs isn't worth it yet at this size and speed. Revisit this once there's more than one contributor or the codebase is large enough that broken intermediate states on `main` become risky.
+## Rule 5 — Branching (updated: two contributors now, not one)
+
+This rule changed as of the second contributor joining the project. The old rule ("work directly on main, no branches") explicitly said to revisit this once there's more than one person — that point has arrived.
+
+**Founder (working with Claude Code):** may continue committing directly to `main` with small, frequent commits, as before. This isn't changing — it's been working fine and the founder reviews everything Claude does in real time anyway.
+
+**Any other contributor (the new partner, and anyone added later):** must **never** push directly to `main`. All work happens on a feature branch, opened as a Pull Request, and reviewed before merging. Specifically:
+
+1. Branch naming: `task/<milestone-task-number>-<short-description>`, e.g. `task/4-sam-gov-client`.
+2. Commit on that branch following Rules 1–4 above (same logical-unit-per-commit discipline, same co-author trailer).
+3. Push the branch and open a PR against `main` when the task is ready for review — not necessarily "finished," but at a point where feedback is useful.
+4. The founder (with Claude Code's help — ask Claude to run `/review` against the PR branch) reviews before merging. Don't self-merge.
+5. Once approved, merge via the PR (squash or regular merge, founder's preference) — don't merge locally and push directly.
+
+**Why this specific split:** the founder's own concern was "what if the partner's commits aren't correct and land directly in the repo" — this rule solves exactly that, without slowing down the founder's own already-working workflow.
+
+**Enforcement (recommended, not yet configured):** GitHub branch protection on `main` — require a pull request before merging, and don't include administrators in that requirement (so the founder can still push directly per the rule above, but any other collaborator cannot). This needs to be set up once the partner is added as a GitHub collaborator; ask Claude Code to do it via `gh` once you have the partner's GitHub username.
 
 ## Rule 6 — Never commit secrets
 `.env`, `.env.local`, and any file containing real API keys must never be committed. Only `.env.example` (with placeholder values) belongs in the repo. Double-check `.gitignore` covers this before the first commit.
+
+This applies doubly now that a second person has repo access — remind the partner explicitly, don't assume he'll know this convention.

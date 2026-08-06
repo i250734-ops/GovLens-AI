@@ -2,6 +2,23 @@
 
 This is the step-by-step plan from where the project stands today. Read `PROJECT_BRIEF.md` and `PROGRESS_REPORT.md` first.
 
+## How we're collaborating (read this before touching the repo)
+
+Full detail lives in `GIT_WORKFLOW.md` — read that file in full before your first commit. Short version: **the founder commits directly to `main`** (as before); **any other contributor (the new partner) always works on a feature branch and opens a Pull Request** — never pushes to `main` directly. The founder (or Claude Code, on request) reviews the PR before it merges. This is the answer to "what if his commits aren't correct" — nothing lands without a review step in between.
+
+## Rough timeline (so this doesn't run forever)
+
+These are estimates, not commitments — real numbers depend on how fast the partner picks up TypeScript and how quickly the manual outreach (Track B below) produces real signal. Assumes today is early August, partner is close to full-time until **Aug 17**, then reduced/part-time once university starts.
+
+| Phase | Estimate | Notes |
+|---|---|---|
+| Milestone 1 remaining (Tasks 3–6) | **~1 week** | Small, bounded, no design ambiguity. Realistic to finish inside the partner's intensive window, with buffer before Aug 17. |
+| Milestone 2 (AI summarization) | **~1–1.5 weeks** | Starts right after Milestone 1. May straddle the Aug 17 pace-change. |
+| Milestone 3 (matching + dashboard + capability statements) | **~3–5 weeks** | The biggest chunk — real UI, PDF export, matching logic. This is also gated on real feedback from the manual pilot (Track B) — if outreach is slow to produce signal, this milestone should wait rather than guess, per the project's own stated philosophy. |
+| Milestone 4 (billing + email digest) | **~1.5–2.5 weeks** | Founder reviews this one most carefully personally — it's the money-touching milestone. |
+
+**Rough total: 8–12 weeks (2–3 months) from now to a complete MVP**, assuming Milestone 3 isn't stalled waiting on pilot feedback. That's the single biggest variable — a founder-side commitment to actually running Track B outreach starting now (not after Milestone 1 finishes) is what keeps this estimate realistic instead of optimistic. If outreach stalls, Milestone 3 stalls with it — worth deciding now whether to build Milestone 3 on assumptions instead if the timeline pressure is high enough to accept that tradeoff.
+
 ## Two parallel tracks from here
 
 This project has two workstreams running side by side, not one sequential list. Don't treat the manual outreach track as blocking the technical one, or vice versa.
@@ -14,7 +31,7 @@ This project has two workstreams running side by side, not one sequential list. 
 3. Charge a small monthly fee for this — real money changing hands is the actual signal, not just people saying it's a good idea.
 4. If and when this gets real customers, their feedback shapes Milestone 2+ decisions (summary format, matching priorities, capability statement structure) before those get built — this is *why* Milestone 1 is scoped to infrastructure only.
 
-Track B has no dependency on Track A being finished — outreach can start any time. Track A's Milestone 2+ work, though, should wait on real signal from Track B rather than guessing.
+Track B has no dependency on Track A being finished — outreach can start any time, and should start **now**, in parallel with Milestone 1, not after it. Track A's Milestone 2+ work, though, should wait on real signal from Track B rather than guessing. See `OUTREACH_PLAN.md` for the actual outreach timing research, lead-sourcing approach, and how this splits between the founder and the partner.
 
 ## Immediate next step on the technical track
 
@@ -39,7 +56,7 @@ Each task follows the locked process: spec/design → plan lock → implement �
 - Needs: NAICS-code filtering, pagination, and retry/backoff on rate limits.
 - Requires a free SAM.gov API key (register at https://sam.gov/data-services) if one hasn't been obtained yet.
 - Definition of done includes an actual test script that fetches a real page of opportunities for one NAICS code (e.g. 541512) and logs the results — proving the integration works against the real API, not just against mocks.
-- **This is a strong candidate for the new partner's first real task** — self-contained, has a clear success criterion, and doesn't require deep familiarity with the rest of the codebase yet.
+- **This is a strong candidate for the new partner's first real task** — self-contained, has a clear success criterion, and doesn't require deep familiarity with the rest of the codebase yet. Per `GIT_WORKFLOW.md`, this happens on a branch (`task/4-sam-gov-client`), as a Pull Request, reviewed before merging — not a direct push to `main`.
 
 ### Task 5 — Nightly ingestion job
 - Build `apps/worker`'s ingestion script: reads tracked NAICS codes, calls the SAM.gov client (Task 4) for each, dedupes against existing `notice_id`s, inserts new rows.
