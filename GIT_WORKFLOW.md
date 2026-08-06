@@ -51,25 +51,21 @@ This trailer is what makes GitHub display Claude as a co-author on the commit al
 - Reference the milestone/spec it belongs to when relevant (e.g., "per specs/01-milestone-1-scope.md").
 - Always end with the `Co-authored-by` trailer from Rule 3.
 
-## Rule 5 — Branching (updated: two contributors now, not one)
+## Rule 5 — Branching (updated: two contributors now, not one — fork model, kept deliberately simple)
 
-This rule changed as of the second contributor joining the project. The old rule ("work directly on main, no branches") explicitly said to revisit this once there's more than one person — that point has arrived.
+This rule changed as of the second contributor (the founder's new partner) joining the project. The old rule ("work directly on main, no branches") explicitly said to revisit this once there's more than one person — that point has arrived. The simplest possible version of "more than one person" is used here on purpose: **no collaborator invite, no branch protection setup, no shared write access to this repo at all.**
 
-**Founder (working with Claude Code):** may continue committing directly to `main` with small, frequent commits, as before. This isn't changing — it's been working fine and the founder reviews everything Claude does in real time anyway.
+**Founder (working with Claude Code):** keeps committing directly to `main` with small, frequent commits, exactly as before. Nothing changes here.
 
-**Any other contributor (the new partner, and anyone added later):** must **never** push directly to `main`. All work happens on a feature branch, opened as a Pull Request, and reviewed before merging. Specifically:
+**Partner:** works from her **own fork** of this repo, not from this repo directly.
+1. She forks `https://github.com/AbdullahTariq74/GovLens-AI` into her own GitHub account (the repo is public, so this needs no invite or permission from the founder — just the "Fork" button on GitHub).
+2. She clones her own fork and works there — commits, pushes, experiments freely on her own copy. She cannot accidentally push anything to the founder's actual repo; a fork has no write access back to the original by default.
+3. When a task is ready for review, she opens a Pull Request from her fork's branch back to `AbdullahTariq74/GovLens-AI`'s `main`. GitHub handles this natively — it's the standard open-source contribution flow.
+4. The founder (with Claude Code's help — ask Claude to run `/review` against her PR) reviews before merging. Nothing lands in the real repo without that review step.
 
-1. Branch naming: `task/<milestone-task-number>-<short-description>`, e.g. `task/4-sam-gov-client`.
-2. Commit on that branch following Rules 1–4 above (same logical-unit-per-commit discipline, same co-author trailer).
-3. Push the branch and open a PR against `main` when the task is ready for review — not necessarily "finished," but at a point where feedback is useful.
-4. The founder (with Claude Code's help — ask Claude to run `/review` against the PR branch) reviews before merging. Don't self-merge.
-5. Once approved, merge via the PR (squash or regular merge, founder's preference) — don't merge locally and push directly.
-
-**Why this specific split:** the founder's own concern was "what if the partner's commits aren't correct and land directly in the repo" — this rule solves exactly that, without slowing down the founder's own already-working workflow.
-
-**Enforcement (recommended, not yet configured):** GitHub branch protection on `main` — require a pull request before merging, and don't include administrators in that requirement (so the founder can still push directly per the rule above, but any other collaborator cannot). This needs to be set up once the partner is added as a GitHub collaborator; ask Claude Code to do it via `gh` once you have the partner's GitHub username.
+**Why this model specifically:** it solves "what if her commits aren't correct" as simply as possible — she never has write access to the real repo at all, so there's nothing to protect against. No GitHub settings to configure, no collaborator management, no branch protection rules. If this ever feels limiting (e.g., she needs to work with the founder on the exact same branch in real time), revisit toward a shared-repo-with-branch-protection model then — not before.
 
 ## Rule 6 — Never commit secrets
 `.env`, `.env.local`, and any file containing real API keys must never be committed. Only `.env.example` (with placeholder values) belongs in the repo. Double-check `.gitignore` covers this before the first commit.
 
-This applies doubly now that a second person has repo access — remind the partner explicitly, don't assume he'll know this convention.
+This applies doubly now that a second person is working with this codebase — remind the partner explicitly, don't assume she'll know this convention. Since she's working from her own fork, this mostly protects her own fork's `.gitignore` discipline, but it's worth saying explicitly anyway.

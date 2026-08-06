@@ -32,19 +32,52 @@ Sources: [Best Time to Send Cold Emails in 2026 — Smartlead](https://www.smart
 
 Sources: [LinkedIn Outreach Benchmarks 2026 — Overloop](https://overloop.com/blog/linkedin-outreach-benchmarks) · [LinkedIn Response Rates by Day — Closely](https://blog.closelyhq.com/linkedin-response-rates-by-day-best-time-send-messages/) · [Data Reveals the Best Time to Send InMails — LinkedIn](https://www.linkedin.com/business/talent/blog/product-tips/best-time-to-send-inmails) · [LinkedIn Response Rate Benchmarks 2026 — LeadSpark AI](https://www.leadspark-ai.com/resources/linkedin-response-rate-benchmarks)
 
-### Practical schedule
-Send batches Tuesday–Thursday, mid-morning (your recipient's timezone — most targets are US-based, so plan around US business hours). Don't send on Monday or Friday. If LinkedIn connection volume plateaus, test a Sunday batch against a Tuesday batch and compare acceptance rates directly rather than assuming either is right.
+### Practical schedule — converted to Pakistan time (PKT, UTC+5, no DST)
 
-## Lead sourcing: Apollo free tier — read this before planning around 1000 leads
+The research above is all in **recipient's US local time** — since you're both sending from Pakistan, here's that same 9:30–11:30 AM window converted to PKT for each US timezone. US clocks are currently on Daylight Saving Time (DST runs roughly March–November); the table also gives standard-time hours for winter months, since Pakistan doesn't observe DST and the gap shifts by an hour when the US switches back.
 
-**Important constraint, verified before writing this plan:** Apollo's free plan caps **CSV export at roughly 10 contacts per month** ([Apollo.io Pricing 2026 — Salesmotion](https://salesmotion.io/blog/apollo-pricing), [Apollo.io Pricing Breakdown 2026 — Cotera](https://cotera.co/articles/apollo-io-pricing-guide)). That's nowhere near enough to export 1000 leads to a spreadsheet in a month on the free tier. Two ways to actually hit 1000:
+| US timezone | Where | 9:30–11:30 AM local = PKT (DST / summer) | PKT (Standard / winter) |
+|---|---|---|---|
+| Eastern | NY, DC, most of the East Coast — highest business concentration | **6:30–8:30 PM** | 7:30–9:30 PM |
+| Central | Texas, Chicago, Midwest | **7:30–9:30 PM** | 8:30–10:30 PM |
+| Mountain | Denver, etc. | **8:30–10:30 PM** | 9:30–11:30 PM |
+| Pacific | California, Seattle | **9:30–11:30 PM** | 10:30 PM–12:30 AM |
 
-1. **Don't export — outreach from inside Apollo directly.** Apollo lets you build a saved list from a filtered search and run email sequences *from within the platform* without exporting to CSV. This isn't subject to the same export-credit cap. If you're comfortable running the actual sending through Apollo's own sequence tool (or connecting your email to it), this is the realistic path to real volume on the free tier.
-2. **Spread it across months, or upgrade.** If you specifically need the raw contact list exported (e.g., to use a different sending tool), the free tier realistically gets you ~10–25/month depending on current terms — hitting 1000 that way would take most of a year. A low-cost paid Apollo tier removes this ceiling if budget allows; check current pricing before committing, since Apollo's tiers change.
+**Practical single sweet spot:** since Eastern and Central together cover the majority of US small businesses, **7:30–8:30 PM PKT** is the overlap where *both* zones are in their mid-morning window simultaneously — the single best hour to send if you're not splitting sends by region. If you want West Coast coverage too, run a second smaller batch around 9:30–10:30 PM PKT.
 
-**Recommendation:** build the list and send from inside Apollo (option 1) for email volume; use Apollo's search purely for LinkedIn lead discovery (find the person, then connect/message on LinkedIn directly, which has no Apollo export limit at all since you're not exporting anything).
+**Same calendar day, no date confusion:** Pakistan is far enough ahead that Tuesday evening PKT still corresponds to Tuesday morning in the US — no need to shift your send day to compensate.
 
-## Suggested Apollo search filters (for building the list/sequence)
+**You don't have to be awake at 7:30 PM–12:30 AM PKT every day to hit this.** Every major email tool (Gmail, Outlook, Apollo's own sequences, Snov.io, etc.) supports **scheduled send** — write the email during normal Pakistan daytime hours and schedule it to go out at the right US-morning time. LinkedIn connection requests don't have native scheduling, so those genuinely need to be sent live in that evening window (or via a scheduling browser extension — worth noting these carry some risk of tripping LinkedIn's automation detection, so manual sending is safer).
+
+Don't send on Monday or Friday regardless of timezone math. If LinkedIn connection volume plateaus, test a Sunday batch against a Tuesday batch and compare acceptance rates directly rather than assuming either is right.
+
+## Lead sourcing — Apollo alone won't get you to 1000/month for free, but a combination will
+
+**Apollo's constraint, verified:** the free plan caps **CSV export at roughly 10 contacts per month** ([Apollo.io Pricing 2026 — Salesmotion](https://salesmotion.io/blog/apollo-pricing), [Apollo.io Pricing Breakdown 2026 — Cotera](https://cotera.co/articles/apollo-io-pricing-guide)), though its in-platform contact-reveal credits are more generous — around 900/year (~75/month) when used for sequences run from inside Apollo rather than exported ([RocketReach Alternatives 2026 — ModernInbound](https://moderninbound.com/blog/best-rocketreach-alternatives)). Export is the bottleneck, not Apollo itself — **build lists and send from inside Apollo's own sequence tool rather than exporting to CSV.**
+
+**The best free source for this specific ICP isn't a commercial tool at all — it's the government's own database.** The SBA runs a free, public **Small Business Search** (formerly "Dynamic Small Business Search"/DSBS) at sba.gov, purpose-built to list exactly the businesses we're targeting: those that have completed SAM registration and hold certifications like WOSB, SDVOSB, HUBZone, or Small Disadvantaged Business ([SBA Small Business Search overview](https://www.sba.gov/search?query=dsbs), [Guide to DSBS — FAMR](https://www.famr.us/learn/dynamic-small-business-search/)). This has **no credit limit** (it's a government registry, not a SaaS product) and is pre-filtered to our exact ICP — a much higher-intent source than generic industry/headcount filtering on a commercial tool. Use this to find qualified company names first, then use Apollo/Hunter.io to find contact emails for those specific companies.
+
+**Other free tools worth knowing about, with real 2026 limits:**
+
+| Tool | Free tier | Best use |
+|---|---|---|
+| **Apollo** | ~10 CSV exports/month; ~75/month in-platform contact credits | Primary tool — build lists, send sequences from inside the platform |
+| **Hunter.io** | 50 credits/month, no rollover ([Hunter.io Pricing 2026 — Typpout](https://www.typpout.com/blog/hunter-io-pricing/)) | Finding a specific email once you already know the company (pairs well with SBA-sourced company names) |
+| **Snov.io** | 150 credits/month for finding; sending is capped separately (15/day, 450-email warm-up quota) — a deliverability ramp, not a hard wall ([Free B2B Leads 2026 — Prospeo](https://prospeo.io/s/free-b2b-leads)) | Secondary email finder + sender once Apollo/Hunter credits run out for the month |
+| **Lusha** | 50 email + 5 phone credits/month | Occasional phone-number lookups for high-priority targets |
+| **RocketReach** | 5 lookups/month | Not worth relying on at this volume — backup only |
+
+**The multiplier you're missing: two people, two sets of free accounts.** Every tool above is a per-account limit. The founder and the partner each signing up for their own free Apollo + Hunter.io + Snov.io accounts roughly **doubles** the effective free monthly capacity across the team — worth doing before considering any paid tier.
+
+**Realistic monthly free-tier capacity, combined, per person:** ~75 (Apollo sequences) + 50 (Hunter) + 150 (Snov find, sending separately capped) ≈ **150–200 genuinely contactable leads/month per person** from paid-tool-style sources, **plus unlimited company discovery** from the SBA database feeding into those tools, **plus uncapped LinkedIn search/connection** (subject only to LinkedIn's own informal weekly connection-request soft limits, commonly cited around 100–200/week per account — no official published number). Two people running this in parallel gets you meaningfully closer to "vast level" than any single free tool alone.
+
+## Suggested lead-sourcing sequence
+
+**Step 0 (do this first, it's free and unlimited):** search the SBA's Small Business Search (sba.gov) filtered to your target certifications (WOSB, SDVOSB, HUBZone, 8(a)/SDB) and target NAICS codes. This produces a list of company names that are exactly your ICP — already SAM-registered, already certified, no guessing about eligibility. Note down company names and, where listed, any contact info the business itself provided in its profile.
+
+**Step 1: fill in contact details with Apollo/Hunter.io.** For companies found in Step 0 without direct contact info, search Apollo or Hunter.io by company domain to find the owner/decision-maker's email. This is far more credit-efficient than blind industry filtering, since you're not spending credits discovering companies — just enriching ones you already know are worth contacting.
+
+**Step 2 (parallel, for a second batch): direct Apollo filtering**, for volume beyond what Step 0 surfaces, or if you want a broader net alongside the high-intent SBA list:
 
 - **Company headcount:** 1–50 employees.
 - **Location:** United States (all states, or start with a few states if you want a smaller first batch to test messaging).
@@ -58,7 +91,7 @@ Start with the keyword-based search (SDVOSB/WOSB/HUBZone/8(a) terms) — it's a 
 ## Who does what (founder + partner)
 
 - **Founder:** owns the actual outreach copy/messaging (knows the product and the pitch best), owns LinkedIn outreach personally (LinkedIn profile continuity matters — better if it's the founder's own network/voice), tracks replies and conversion into pilot conversations.
-- **Partner:** owns Apollo list-building and filter iteration (a good task alongside his TypeScript ramp-up, and doesn't require deep product knowledge to execute well), can help draft/test email sequence variants once the founder has approved a base template, tracks send-volume and open/reply metrics.
+- **Partner:** owns Apollo list-building and filter iteration (a good task alongside her TypeScript ramp-up, and doesn't require deep product knowledge to execute well), can help draft/test email sequence variants once the founder has approved a base template, tracks send-volume and open/reply metrics.
 - **Both:** review response data weekly and adjust — if LinkedIn is meaningfully outperforming email (likely, per the research above), shift effort there rather than sticking to a 50/50 split by habit.
 
 ## What "done" looks like for this track

@@ -4,7 +4,7 @@ This is the step-by-step plan from where the project stands today. Read `PROJECT
 
 ## How we're collaborating (read this before touching the repo)
 
-Full detail lives in `GIT_WORKFLOW.md` — read that file in full before your first commit. Short version: **the founder commits directly to `main`** (as before); **any other contributor (the new partner) always works on a feature branch and opens a Pull Request** — never pushes to `main` directly. The founder (or Claude Code, on request) reviews the PR before it merges. This is the answer to "what if his commits aren't correct" — nothing lands without a review step in between.
+Full detail lives in `GIT_WORKFLOW.md` — read that file in full before your first commit. Short version, kept deliberately simple: **the founder commits directly to `main`** (as before); **the partner forks the repo into her own GitHub account** and works there — she never has write access to the real repo at all. When a task is ready, she opens a Pull Request from her fork back to the original repo; the founder (or Claude Code, on request) reviews it before merging. This is the answer to "what if her commits aren't correct" — she can't push to the real repo in the first place, so there's nothing to protect against beyond the normal PR review.
 
 ## Rough timeline (so this doesn't run forever)
 
@@ -56,7 +56,7 @@ Each task follows the locked process: spec/design → plan lock → implement �
 - Needs: NAICS-code filtering, pagination, and retry/backoff on rate limits.
 - Requires a free SAM.gov API key (register at https://sam.gov/data-services) if one hasn't been obtained yet.
 - Definition of done includes an actual test script that fetches a real page of opportunities for one NAICS code (e.g. 541512) and logs the results — proving the integration works against the real API, not just against mocks.
-- **This is a strong candidate for the new partner's first real task** — self-contained, has a clear success criterion, and doesn't require deep familiarity with the rest of the codebase yet. Per `GIT_WORKFLOW.md`, this happens on a branch (`task/4-sam-gov-client`), as a Pull Request, reviewed before merging — not a direct push to `main`.
+- **This is a strong candidate for the new partner's first real task** — self-contained, has a clear success criterion, and doesn't require deep familiarity with the rest of the codebase yet. Per `GIT_WORKFLOW.md`, she works this on her own fork, then opens a Pull Request back to the real repo when ready — never a direct push to `main`.
 
 ### Task 5 — Nightly ingestion job
 - Build `apps/worker`'s ingestion script: reads tracked NAICS codes, calls the SAM.gov client (Task 4) for each, dedupes against existing `notice_id`s, inserts new rows.
