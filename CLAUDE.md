@@ -3,10 +3,10 @@
 This file is read automatically by Claude Code at the start of every session in this repo. It is the single source of truth for scope, constraints, and workflow. If anything in a conversation seems to conflict with this file, this file wins — ask the founder before proceeding.
 
 ## Repository
-https://github.com/AbdullahTariq74/GovLens-AI (public repo, currently empty — you are scaffolding it from scratch)
+https://github.com/AbdullahTariq74/GovLens-AI (public repo — Milestone 1 in progress; see `README.md` and `docs/PROGRESS_REPORT.md` for actual current status, not this file, since this file doesn't track day-to-day progress)
 
 ## What this product is
-GovLens AI matches US small businesses to federal contract opportunities from SAM.gov, summarizes dense solicitations in plain English using Claude, and drafts capability statements. Full product brief: `specs/00-product-brief.md`.
+GovLens AI matches US small businesses to federal contract opportunities from SAM.gov, summarizes dense solicitations in plain English using Claude, and drafts capability statements. Full product brief (technical spec): `specs/00-product-brief.md`. Narrative version, better for onboarding a new person: `docs/PROJECT_BRIEF.md`.
 
 ## Founder context (hard constraints — do not violate)
 - Solo founder, based in **Pakistan**. No team, no funding, budget-conscious.
@@ -42,24 +42,27 @@ This boundary exists because the founder is deliberately keeping customer-facing
 - **Email:** Resend (Milestone 4, not yet)
 - **Hosting:** Vercel (web app) + Railway or Fly.io (nightly cron worker)
 
-## Repository structure
+## Repository structure (actual, as of Milestone 1 Tasks 1/2/6 being done)
 ```
 govlens-ai/
 ├── CLAUDE.md
 ├── GIT_WORKFLOW.md
+├── README.md                         # start here — how to run locally, current status
+├── docs/                             # onboarding docs: project brief, progress report, execution plan, outreach plan
 ├── specs/
 │   ├── 00-product-brief.md
 │   ├── 01-milestone-1-scope.md
 │   └── 02-billing-paddle.md          # reference only — do not implement yet
 ├── apps/
-│   ├── web/                          # Next.js dashboard, onboarding, billing UI
-│   └── worker/                       # nightly SAM.gov ingestion + summarization cron job
+│   ├── web/                          # Next.js (App Router, TS) — dashboard, onboarding, auth, billing UI
+│   └── worker/                       # plain Node/TS — nightly SAM.gov ingestion + summarization cron job
 ├── packages/
-│   ├── db/                           # Prisma schema + migrations
-│   ├── claude-client/                # Claude API wrapper (Milestone 2+)
-│   ├── sam-gov-client/               # SAM.gov API client (build now)
-│   └── paddle-client/                # Paddle checkout + webhooks (Milestone 4, not yet)
-└── infra/                            # deploy configs
+│   ├── db/                           # Prisma schema + client (real, connected to a live Supabase project)
+│   ├── claude-client/                # Claude API wrapper (Milestone 2+, still a placeholder)
+│   ├── sam-gov-client/               # SAM.gov API client (Task 4 — build now)
+│   └── paddle-client/                # Paddle checkout + webhooks (Milestone 4, still a placeholder)
+├── infra/                            # deploy configs (empty for now)
+└── TODOS.md                          # deferred items (e.g. E2E test automation)
 ```
 
 ## Git workflow — read `GIT_WORKFLOW.md` in full before your first commit

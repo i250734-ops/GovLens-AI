@@ -4,7 +4,9 @@ GovLens AI matches US small businesses to federal contract opportunities from SA
 
 ## Status
 
-**Milestone 1 (foundation), Tasks 1–2 of 6 done.** Repo scaffold and Supabase auth + Prisma connection are built and verified end-to-end (real magic-link sign-in tested against a live Supabase project). Tasks 3–6 (database schema, SAM.gov client, nightly ingestion, this README) are next. Full current status: [`docs/PROGRESS_REPORT.md`](docs/PROGRESS_REPORT.md). What's next and roughly when: [`docs/EXECUTION_PLAN.md`](docs/EXECUTION_PLAN.md).
+**Milestone 1 (foundation), Tasks 1, 2, and 6 of 6 done.** Repo scaffold, Supabase auth + Prisma connection (verified end-to-end with a real magic-link sign-in), and this README are done. Tasks 3–5 (database schema, SAM.gov client, nightly ingestion) are next. Full current status: [`docs/PROGRESS_REPORT.md`](docs/PROGRESS_REPORT.md). What's next and roughly when: [`docs/EXECUTION_PLAN.md`](docs/EXECUTION_PLAN.md).
+
+Also in `docs/`: [`docs/OUTREACH_PLAN.md`](docs/OUTREACH_PLAN.md) — the manual customer-outreach side of the project, running in parallel with the technical build. Lower priority if you're purely working on code, but read it if you're also involved in outreach.
 
 ## Running locally
 
