@@ -1,6 +1,7 @@
 datasource db {
   provider  = "postgresql"
   url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 generator client {
@@ -18,11 +19,12 @@ model Opportunity {
   id          String    @id @default(uuid())
   samGovId    String    @unique
   title       String
+  naicsCode   String
+  setAside    String?
   agency      String?
   description String?
   postedDate  DateTime?
   dueDate     DateTime?
-  summaryAI   String?
   createdAt   DateTime  @default(now())
 }
 // Models added when the schema is designed (opportunities, users, matches, etc.)

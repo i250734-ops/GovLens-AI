@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "prisma": "^6.9.0",
-    "@prisma/client": "^6.9.0"
+    "@prisma/client": "^6.9.0",
+    "dotenv": "^16.6.1"
   },
   "devDependencies": {
     "tsx": "^4.19.2",
