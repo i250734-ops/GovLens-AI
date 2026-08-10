@@ -7,5 +7,24 @@ datasource db {
 generator client {
   provider = "prisma-client-js"
 }
-
+model User {
+  id              String   @id @default(uuid())
+  email           String   @unique
+  createdAt       DateTime @default(now())
+  naicsCodes      String[]
+  setAsideStatus  String?
+  keywords        String[]
+}
+model Opportunity {
+  id          String    @id @default(uuid())
+  samGovId    String    @unique
+  title       String
+  naicsCode   String
+  setAside    String?
+  agency      String?
+  description String?
+  postedDate  DateTime?
+  dueDate     DateTime?
+  createdAt   DateTime  @default(now())
+}
 // Models added when the schema is designed (opportunities, users, matches, etc.)

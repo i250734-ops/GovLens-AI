@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "start": "tsx src/index.ts",
+    "ingest": "tsx --env-file=.env src/ingest.ts",
     "build": "tsc",
     "typecheck": "tsc --noEmit"
   },
