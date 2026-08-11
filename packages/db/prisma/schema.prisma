@@ -16,6 +16,7 @@ model User {
   keywords        String[]
 }
 model Opportunity {
+  summary       OpportunitySummary?
   id          String    @id @default(uuid())
   samGovId    String    @unique
   title       String
@@ -28,3 +29,14 @@ model Opportunity {
   createdAt   DateTime  @default(now())
 }
 // Models added when the schema is designed (opportunities, users, matches, etc.)
+
+model OpportunitySummary {
+  id             String   @id @default(uuid())
+  opportunityId  String   @unique
+  opportunity    Opportunity @relation(fields: [opportunityId], references: [id])
+  deadline       String?
+  scope          String?
+  eligibility    String?
+  plainExplanation String?
+  createdAt      DateTime @default(now())
+}
