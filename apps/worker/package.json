@@ -5,6 +5,7 @@
   "scripts": {
     "start": "tsx src/index.ts",
     "ingest": "tsx --env-file=.env src/ingest.ts",
+    "summarize": "tsx --env-file=.env src/summarize.ts",
     "build": "tsc",
     "typecheck": "tsc --noEmit"
   },

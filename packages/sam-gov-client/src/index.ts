@@ -43,3 +43,12 @@ export async function getOpportunities(params: {
 
   return response.json();
 }
+export async function getSolicitationText(descriptionUrl: string): Promise<string> {
+  const url = new URL(descriptionUrl);
+  url.searchParams.set("api_key", SAM_GOV_API_KEY as string);
+
+  const response = await fetchWithRetry(url.toString());
+  const data = await response.json();
+
+  return data.description ?? data.text ?? "No solicitation text available";
+}

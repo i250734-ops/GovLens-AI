@@ -1,4 +1,4 @@
-import { prisma } from "@govlens/db";
+﻿import { prisma } from "@govlens/db";
 import { getOpportunities } from "@govlens/sam-gov-client";
 
 const FALLBACK_NAICS = ["541512"];
@@ -107,55 +107,9 @@ async function ingest() {
   console.log(`Done. Fetched: ${totalFetched}, New inserted: ${totalInserted}`);
 }
 
-
-import { summarizeOpportunity } from "@govlens/claude-client";
-
-async function summarizeMissing() {
-  const pending = await prisma.opportunity.findMany({
-    where: { summary: null },
-    take: 20,
-  });
-
-  console.log(`Found ${pending.length} opportunities without a summary.`);
-
-  for (const opp of pending) {
-    const rawText = `Title: ${opp.title}
-Agency: ${opp.agency ?? "Unknown"}
-NAICS: ${opp.naicsCode}
-Set-Aside: ${opp.setAside ?? "None"}
-Description: ${opp.description ?? "No description provided"}
-Due Date: ${opp.dueDate ?? "Not specified"}`;
-
-    try {
-      const result = await summarizeOpportunity(rawText);
-      await prisma.opportunitySummary.create({
-        data: {
-          opportunityId: opp.id,
-          deadline: result.deadline,
-          scope: result.scope,
-          eligibility: result.eligibility,
-          plainExplanation: result.plainExplanation,
-        },
-      });
-      console.log(`  Summarized: ${opp.title}`);
-    } catch (err) {
-      console.error(`  Failed to summarize ${opp.id}:`, err);
-    }
-  }
-}
-
-async function main() {
-  await ingest();
-  await summarizeMissing();
-}
-
-main()
+ingest()
   .then(() => process.exit(0))
   .catch((err) => {
-    console.error("Run failed:", err);
+    console.error("Ingest failed:", err);
     process.exit(1);
   });
-
-
-
-
